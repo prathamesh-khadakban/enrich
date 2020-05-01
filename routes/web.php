@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//dashboard
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
+// Technical QC 
+Route::resource('/qc','QcController');
