@@ -3,10 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Qc;
+use App\Tqc;
 use Illuminate\Http\Request;
 
 class QcController extends Controller
 {
+
+    /**
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+    public function __construct()
+    {
+    $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,7 @@ class QcController extends Controller
      */
     public function index()
     {
-        print_r("hi");
+        print_r("Listing");
     }
 
     /**
@@ -35,7 +47,7 @@ class QcController extends Controller
      */
     public function store(Request $request)
     {
-        $Qc = new Qc;
+        $Qc = new Tqc;
 
         $Qc->file_name = $request->file_name;
         $Qc->container = $request->container;
@@ -54,7 +66,7 @@ class QcController extends Controller
 
         $Qc->save();
 
-        return redirect()->back()->with('message', 'Form Submitted Successfully');;
+        return redirect()->back()->with('message', 'Form Submitted Successfully');
 
         //print_r($data);
     }

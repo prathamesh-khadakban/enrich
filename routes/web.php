@@ -28,3 +28,11 @@ Route::get('/admin', function () {
 
 // Technical QC 
 Route::resource('/qc','QcController');
+
+// Datatable experiment
+ Route::resource('users','UserController');
+ Route::get('users/{id}/edit/','UserController@edit');
+
+ // 2nd exp
+ Route::resource('tqcs','TqcController');
+ Route::get('tqcs/{id}/edit/','TqcController@edit');
