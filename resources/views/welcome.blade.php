@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Enrich TV</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -61,6 +61,12 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .responsive {
+              width: 100%;
+              max-width: 500px;
+              height: auto;
+            }
         </style>
     </head>
     <body>
@@ -80,20 +86,23 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <!-- <div class="title m-b-md">
                     EnrichTV
-                </div>
+                </div> -->
 
-                <div class="links">
-                    <!-- <a href="https://laravel.com/docs">Docs</a>
+                <!-- <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                </div>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div> -->
+
+                <img src="../../dist/img/logo.jpg" alt="Nature" class="responsive">
+
             </div>
         </div>
     </body>
