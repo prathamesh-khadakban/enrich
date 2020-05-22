@@ -41,7 +41,7 @@
           <div class="row">
           <div class="col-lg-12 margin-tb">
           <div class="pull-right">
-          <a class="btn btn-success mb-2" id="new-user" data-toggle="modal">New Qc</a>
+          <button class="btn btn-info" id="new-user" data-toggle="modal">New Qc</button>
           </div>
           </div>
           </div>
@@ -52,8 +52,7 @@
           <th width="5%">No</th>
           <th width="5%">Id</th>
           <th width="30%">File Name</th>
-          <!-- <th width="30%">Email</th> -->
-          <!-- <th width="30%">Created At</th> -->
+          <th width="20%">Status</th>
           <th width="20%">Action</th>
           </tr>
           </thead>
@@ -314,7 +313,7 @@
     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
     {data: 'id', name: 'id'},
     {data: 'file_name', name: 'file_name'},
-    /*{data: 'created_at', created_at: 'created_at'},*/
+    {data: 'action2', file_name: 'action2', orderable: false, searchable: false},
     {data: 'action', file_name: 'action', orderable: false, searchable: false},
     ]
     });

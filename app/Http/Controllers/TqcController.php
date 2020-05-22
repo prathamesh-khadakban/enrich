@@ -33,13 +33,14 @@ return Datatables::of($data)
 ->addIndexColumn()
 ->addColumn('action', function($row){
 
+/*Old functionality*/
 /*$action = '<a class="btn btn-info" id="show-user" data-toggle="modal" data-id='.$row->id.'>Show</a>
 <a class="btn btn-success" id="edit-user" data-toggle="modal" data-id='.$row->id.'>Edit </a>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <a id="delete-user" data-id='.$row->id.' class="btn btn-danger delete-user">Delete</a>';*/
 
 $action = '
-<a class="btn btn-success" id="edit-user" data-toggle="modal" data-id='.$row->id.'>Edit </a>
+<button type="button" class="btn btn-info" id="edit-user" data-toggle="modal" data-id='.$row->id.' >Edit</button>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 ';
 
@@ -47,7 +48,20 @@ $action = '
 return $action;
 
 })
-->rawColumns(['action'])
+->addColumn('action2', function($row){
+
+if ($row->status == 1) {
+        
+$action2 = '<span class="badge badge-success">Active</span>';
+
+}else{
+      $action2 =  '<span class="badge badge-danger">Inactive</span>'; 
+}
+
+return $action2;
+
+})
+->rawColumns(['action2'],['action'])
 ->make(true);
 }
 
@@ -58,8 +72,22 @@ public function store(Request $request)
 {
 
 	$r=$request->validate([
-		/*'name' => 'required',
-		'email' => 'required',*/
+
+                'file_name' => 'required',
+                'container' => 'required',
+                'video_codec' => 'required',
+                'video_aspect_ratio' => 'required',
+                'video_frame_size' => 'required',
+                'video_frame_rate' => 'required',
+                'video_bitrate' => 'required',
+                'h_264_profile' => 'required',
+                'audio_sampling_rate' => 'required',
+                'audio_bitrate' => 'required',
+                'audio_codec' => 'required',
+                'audio_channels' => 'required',
+                'key_frame_interval' => 'required',
+                'duration' => 'required',
+                'status' => 'required'
 
 	]);
 

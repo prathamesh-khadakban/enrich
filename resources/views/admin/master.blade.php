@@ -29,6 +29,19 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>    
     </ul> 
+
+    <!-- Logout -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+      <a class="btn btn-outline-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+              Logout
+      </a>    
+      <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
+      </li>   
+    </ul> 
+
   </nav>
   <!-- /.navbar -->
 
@@ -53,6 +66,7 @@
         <div class="info">
           <a href="/home" class="d-block">{{ Auth::user()->name }}</a>
         </div>
+
       </div>
 
       <!-- Sidebar Menu -->
