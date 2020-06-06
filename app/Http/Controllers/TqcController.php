@@ -118,26 +118,6 @@ public function store(Request $request)
 		$msg = 'User data is updated successfully';
 	return redirect()->route('tqcs.index')->with('success',$msg);
 
-	/*$Qc = new Tqc;
-
-        $Qc->file_name = $request->file_name;
-        $Qc->container = $request->container;
-        $Qc->video_codec = $request->video_codec;
-        $Qc->video_aspect_ratio = $request->video_aspect_ratio;
-        $Qc->video_frame_size = $request->video_frame_size;
-        $Qc->video_frame_rate = $request->video_frame_rate;
-        $Qc->video_bitrate = $request->video_bitrate;
-        $Qc->h_264_profile = $request->h_264_profile;
-        $Qc->audio_sampling_rate = $request->audio_sampling_rate;
-        $Qc->audio_bitrate = $request->audio_bitrate;
-        $Qc->audio_codec = $request->audio_codec;
-        $Qc->audio_channels = $request->audio_channels;
-        $Qc->key_frame_interval = $request->key_frame_interval;
-        $Qc->duration = $request->duration;
-
-        $Qc->save();
-
-        return redirect()->back()->with('message', 'Form Submitted Successfully');*/
 }
 
 /**
